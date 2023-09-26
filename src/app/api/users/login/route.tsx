@@ -28,25 +28,25 @@ export async function POST(request:NextRequest){
             return NextResponse.json({error : "Invalid Password"} , {status : 400})
         }
 
-        //create token data
-        const tokenData = {
-            id: user.id,
-            username : user.username ,
-            email : user.email
-        }
+        // //create token data
+        // const tokenData = {
+        //     id: user.id,
+        //     username : user.username ,
+        //     email : user.email
+        // }
 
-        //create token
-        const secret = process.env.JWT_SECRET_KEY;
-        var token = jwt.sign(tokenData, secret! , {expiresIn : "2h"});
+        // //create token
+        // const secret = process.env.JWT_SECRET_KEY;
+        // var token = jwt.sign(tokenData, secret! , {expiresIn : "2h"});
 
         const response = NextResponse.json({
             message : "Login Successful",
             status : 500
         })
 
-        response.cookies.set("token" , token , {
-            httpOnly : true
-        })
+        // response.cookies.set("token" , token , {
+        //     httpOnly : true
+        // })
 
         return response;
 

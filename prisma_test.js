@@ -3,17 +3,20 @@ const { PrismaClient } = require('@prisma/client')
 const prisma = new PrismaClient()
 
 async function main() {
-  // ... you will write your Prisma Client queries here
   const allUsers = await prisma.user.findMany()
   console.log(allUsers)
-  const newUser =await prisma.user.create({
+  const updateUser =await prisma.user.update({
+    where : {
+      id:1
+    },
     data : {
-        email : "asas" ,
-        password : "asasasasas", 
-        username : "pa"
+        email : "four@gmail.com" , 
+        verifyToken : "abcd",
+        verifyTokenExpiry : new Date((new Date).getTime() + 60*60000),
+        forgotPasswordTokenExpiry : new Date()
     }
 })
-console.log(newUser);
+
 }
 
 main()

@@ -17,7 +17,7 @@ model User {
   password String
   isVerified Boolean @default(false)
   isAdmin   Boolean @default(false)
-  forgotPasswordToken String?
+  forgotPasswordToken String? 
   forgotPasswordTokenExpiry DateTime?
   verifyToken String?
   verifyTokenExpiry DateTime?
