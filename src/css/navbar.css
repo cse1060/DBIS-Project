@@ -1,0 +1,17 @@
+.navbar{
+    display: flex;
+    justify-content: center;
+}
+.n{
+    margin: 5px;
+    width:200px;
+    border-radius: 5px;
+    border:none;
+    color: black;
+    transition-duration: 0.2s;
+}
+.n:hover{
+    color:aliceblue;
+    background-color:black;
+    cursor: pointer;
+}

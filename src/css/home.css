@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.navbar{
+    display: flex;
+    justify-content: center;
+}
+.n{
+    margin: 5px;
+    width:200px;
+    border-radius: 5px;
+    border:none;
+    color: black;
+    transition-duration: 0.2s;
+}
+.n:hover{
+    color:aliceblue;
+    background-color:black;
+    cursor: pointer;
+}
+.mainimg{
+    background-image: url("../../public/images/house.jpg");
+     width: 60%;
+     height:330px;
+     background-repeat: no-repeat;
+     object-fit: fill;
+     margin-top: 5px;
+     margin-left: 250px;
+     display: inline-block;
+     
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.btn{
+    width:200px;
+    height:150px;
+    border-radius: 20px;
+    margin: 12px;
+    margin-top: 18px;;
+    margin-bottom: 0px;
+    transition: transform .2s;
+    border: 0;
+    
+    
+}
+.b{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: larger;
+    
+    
+}
+.btn:hover{
+    transform: scale(1.06); 
+    cursor: pointer;
+}
+.rent{
+    background: url("../../public/images/rent.jpg") ;
+   background-size: cover;
+}
+.plots{
+    background: url("../../public/images/plots.jpg");
+    background-size: cover;
+}
+.invest{
+    background: url("../../public/images/invest.jpg");
+    background-size: cover;
+}
+.sell{
+    background: url("../../public/images/sell.jpg");
+    background-size: cover;
+}
+.buy{
+    background: url("../../public/images/buy.jpg");
+    background-size: cover;
+}
+.lease{
+    background: url("../../public/images/lease.jpg");
+    background-size: cover;
+}
