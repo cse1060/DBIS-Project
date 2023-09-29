@@ -3,6 +3,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import SigninButton from "@/components/SigninButton";
 
 export default function SignupPage() {
     const router = useRouter();
@@ -29,6 +30,7 @@ export default function SignupPage() {
 
     return(
         <div>
+            <SigninButton type = "signup"/>
             <h1>{loading ? "Processing" : "Signup" }</h1>
             <hr />
             <label htmlFor="username" >username: </label>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import SigninButton from "@/components/SigninButton";
 
 export default function LoginPage() {
     const router = useRouter();
@@ -23,6 +24,7 @@ export default function LoginPage() {
 
     return(
         <div>
+            <SigninButton type="login"/>
             <h1>Login</h1>
             <hr />
             <label htmlFor="email" >email: </label>

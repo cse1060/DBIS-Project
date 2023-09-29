@@ -9,15 +9,7 @@ export default function ProfilePage() {
 
   const router = useRouter()
 
-  const logout =async ()=>{
-    try {
-      const response = await axios.get("/api/users/logout");
-      router.push('/login');
-
-    } catch (error:any) {
-      console.log(error);
-    }
-  }
+  
 
   const [data , setData]:any = useState("nothing")
 
@@ -35,7 +27,7 @@ export default function ProfilePage() {
       <br />
       <h2>{data==='nothing'? "Nothing" : 
       <Link href={`/profile/${data}`}>{data}</Link> }</h2>
-      <button onClick={logout}>Logout</button>
+
       <hr />
       <button onClick={getUserDetails}>Get User Details</button>
     </div>
