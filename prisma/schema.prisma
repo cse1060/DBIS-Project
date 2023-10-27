@@ -11,14 +11,108 @@ datasource db {
 }
 
 model User {
-  id      Int      @id @default(autoincrement())
-  email   String   @unique
-  username    String
-  password String
-  isVerified Boolean @default(false)
-  isAdmin   Boolean @default(false)
-  forgotPasswordToken String? 
+  id                        Int            @id @default(autoincrement())
+  email                     String         @unique
+  username                  String         @unique
+  password                  String
+  phone                     String?        @unique
+  FullName                  String?
+  isVerified                Boolean        @default(false)
+  isnew                     Boolean        @default(true)
+  isAdmin                   Boolean        @default(false)
+  forgotPasswordToken       String?
   forgotPasswordTokenExpiry DateTime?
-  verifyToken String?
-  verifyTokenExpiry DateTime?
+  verifyToken               String?
+  verifyTokenExpiry         DateTime?
+  User_Profile              User_Profile[]
+  Agreement                 Agreement[]
+  Property                  Property[]
+}
+
+model Property {
+  id                      Int      @id @unique @default(autoincrement())
+  agent_id                Int
+  agreement_id            Int?
+  date_added              DateTime
+  city                    String
+  latitude                Decimal?
+  longitude               Decimal?
+  action                  String
+  subType                 String
+  Property_Type           String
+  Commercial_Property_id  Int?
+  Residential_Property_id Int?
+
+  Agreement Agreement? @relation(fields: [agreement_id], references: [id])
+  User      User?      @relation(fields: [agent_id], references: [id])
+
+  // Agent     Agent?     @relation(fields: [agent_id], references: [id])
+
+  Commercial_Property  Commercial_Property?  @relation(fields: [Commercial_Property_id], references: [id])
+  Residential_Property Residential_Property? @relation(fields: [Residential_Property_id], references: [id])
+}
+
+model User_Profile {
+  prop_id   Int
+  user_id   Int
+  isliked   Boolean?
+  isOwned   Boolean?
+  isVisited Boolean?
+  Rating    Int?
+
+  user     User       @relation(fields: [user_id], references: [id])
+  Comments Comments[]
+
+  @@id([prop_id, user_id])
+  @@unique([prop_id, user_id])
+}
+
+model Comments {
+  user_id Int
+  id      Int     @id @default(autoincrement())
+  prop_id Int
+  body    String?
+
+  User_Profile User_Profile @relation(fields: [user_id, prop_id], references: [user_id, prop_id])
+}
+
+model Agreement {
+  id             Int     @id @unique @default(autoincrement())
+  client_id      Int
+  prop_id        Int?
+  agreement_desc String?
+
+  User     User       @relation(fields: [client_id], references: [id])
+  Property Property[]
+}
+
+// model Agent {
+//   id       Int        @id @unique @default(autoincrement())
+//   user_id   Int
+//   Property Property[]
+// }
+
+model Commercial_Property {
+  id          Int        @id @unique
+  garages     Int
+  floors      Int
+  area        Decimal
+  for_sale    Boolean?
+  sale_amount BigInt?
+  for_rent    Boolean?
+  rent_amount BigInt?
+  Property    Property[]
+}
+
+model Residential_Property {
+  id          Int        @id @unique
+  rooms       Int
+  balconies   Int
+  area        Decimal
+  description String
+  for_sale    Boolean?
+  sale_amount BigInt?
+  for_rent    Boolean?
+  rent_amount BigInt?
+  Property    Property[]
 }

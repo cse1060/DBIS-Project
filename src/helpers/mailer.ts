@@ -48,12 +48,13 @@ export const sendEmail = async ({email , emailType , userId} : any)=>{
                 to ${emailType === "VERIFY" ? "verify your email" : "reset your password"}
             </p>`
         }
-
+        
         const mailResponse = await transport.sendMail(mailOptions);
+        console.log(mailResponse);
         return mailResponse;
            
     } catch (error:any) {
-        console.log(error.message);
+        console.log(error);
     }
 }
 

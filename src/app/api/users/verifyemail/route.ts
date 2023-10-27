@@ -36,27 +36,12 @@ export async function POST(request : NextRequest) {
             }
         })
 
-        console.log(user);
-
-        const tokenData = {
-            id: user.id,
-            username : user.username ,
-            email : user.email
-        }
-
-        //create token
-        const secret = process.env.JWT_SECRET_KEY;
-        const tok = jwt.sign(tokenData, secret! , {expiresIn : "2h"});
+        console.log(user);    
 
         const response = NextResponse.json({
             message : "Email Verification Successful",
             status : 500
         })
-
-        response.cookies.set("token" , tok , {
-            httpOnly : true
-        })
-
         return response;
     } catch (error:any) {
         console.log(error);

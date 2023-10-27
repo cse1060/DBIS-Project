@@ -7,40 +7,44 @@ import SigninButton from "@/components/SigninButton";
 
 export default function LoginPage() {
     const router = useRouter();
-    const [user , setUser] = useState({
-        email : "",
-        password : "" ,
+    const [user, setUser] = useState({
+        email: "",
+        password: "",
     })
 
-    const onLoginup = async ()=>{
+    const onLoginup = async () => {
         try {
-            const response  = await axios.post("/api/users/login" , user);
+            const response = await axios.post("/api/users/login", user);
             console.log(response.data);
-            router.push("/profile");
-        } catch (error :any) {
+            if (response.data.isnew) {
+                router.push(`/profile/create/${response.data.username}`);
+            } else {
+                router.push(`/profile/${response.data.username}`);
+            }
+        } catch (error: any) {
             console.log(error);
         }
     }
 
-    return(
+    return (
         <div>
-            <SigninButton type="login"/>
+            <SigninButton type="login" />
             <h1>Login</h1>
             <hr />
             <label htmlFor="email" >email: </label>
-            <input 
+            <input
                 type="text"
                 id="email"
                 value={user.email}
-                onChange={(e)=> setUser({...user , email : e.target.value})}
+                onChange={(e) => setUser({ ...user, email: e.target.value })}
                 placeholder="email"
             /><br />
             <label htmlFor="password" >password: </label>
-            <input 
+            <input
                 type="password"
                 id="password"
                 value={user.password}
-                onChange={(e)=> setUser({...user , password : e.target.value})}
+                onChange={(e) => setUser({ ...user, password: e.target.value })}
                 placeholder="password"
             /><br />
             <button
