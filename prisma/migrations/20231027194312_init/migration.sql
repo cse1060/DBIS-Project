@@ -24,14 +24,16 @@ CREATE TABLE `User` (
 CREATE TABLE `Property` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `agent_id` INTEGER NOT NULL,
-    `agreement_id` INTEGER NOT NULL,
+    `agreement_id` INTEGER NULL,
     `date_added` DATETIME(3) NOT NULL,
     `city` VARCHAR(191) NOT NULL,
-    `latitude` DECIMAL(65, 30) NOT NULL,
-    `longitude` DECIMAL(65, 30) NOT NULL,
+    `latitude` DECIMAL(65, 30) NULL,
+    `longitude` DECIMAL(65, 30) NULL,
+    `action` VARCHAR(191) NOT NULL,
+    `subType` VARCHAR(191) NOT NULL,
     `Property_Type` VARCHAR(191) NOT NULL,
-    `Commercial_Property_id` INTEGER NOT NULL,
-    `Residential_Property_id` INTEGER NOT NULL,
+    `Commercial_Property_id` INTEGER NULL,
+    `Residential_Property_id` INTEGER NULL,
 
     UNIQUE INDEX `Property_id_key`(`id`),
     PRIMARY KEY (`id`)
@@ -64,7 +66,7 @@ CREATE TABLE `Comments` (
 CREATE TABLE `Agreement` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `client_id` INTEGER NOT NULL,
-    `prop_id` INTEGER NOT NULL,
+    `prop_id` INTEGER NULL,
     `agreement_desc` VARCHAR(191) NULL,
 
     UNIQUE INDEX `Agreement_id_key`(`id`),
@@ -72,16 +74,8 @@ CREATE TABLE `Agreement` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
-CREATE TABLE `Agent` (
-    `id` INTEGER NOT NULL AUTO_INCREMENT,
-
-    UNIQUE INDEX `Agent_id_key`(`id`),
-    PRIMARY KEY (`id`)
-) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
--- CreateTable
 CREATE TABLE `Commercial_Property` (
-    `id` INTEGER NOT NULL,
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
     `garages` INTEGER NOT NULL,
     `floors` INTEGER NOT NULL,
     `area` DECIMAL(65, 30) NOT NULL,
@@ -96,7 +90,7 @@ CREATE TABLE `Commercial_Property` (
 
 -- CreateTable
 CREATE TABLE `Residential_Property` (
-    `id` INTEGER NOT NULL,
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
     `rooms` INTEGER NOT NULL,
     `balconies` INTEGER NOT NULL,
     `area` DECIMAL(65, 30) NOT NULL,
@@ -111,16 +105,16 @@ CREATE TABLE `Residential_Property` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- AddForeignKey
-ALTER TABLE `Property` ADD CONSTRAINT `Property_agreement_id_fkey` FOREIGN KEY (`agreement_id`) REFERENCES `Agreement`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `Property` ADD CONSTRAINT `Property_agreement_id_fkey` FOREIGN KEY (`agreement_id`) REFERENCES `Agreement`(`id`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `Property` ADD CONSTRAINT `Property_agent_id_fkey` FOREIGN KEY (`agent_id`) REFERENCES `Agent`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `Property` ADD CONSTRAINT `Property_agent_id_fkey` FOREIGN KEY (`agent_id`) REFERENCES `User`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `Property` ADD CONSTRAINT `Property_Commercial_Property_id_fkey` FOREIGN KEY (`Commercial_Property_id`) REFERENCES `Commercial_Property`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `Property` ADD CONSTRAINT `Property_Commercial_Property_id_fkey` FOREIGN KEY (`Commercial_Property_id`) REFERENCES `Commercial_Property`(`id`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `Property` ADD CONSTRAINT `Property_Residential_Property_id_fkey` FOREIGN KEY (`Residential_Property_id`) REFERENCES `Residential_Property`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `Property` ADD CONSTRAINT `Property_Residential_Property_id_fkey` FOREIGN KEY (`Residential_Property_id`) REFERENCES `Residential_Property`(`id`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE `User_Profile` ADD CONSTRAINT `User_Profile_user_id_fkey` FOREIGN KEY (`user_id`) REFERENCES `User`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;

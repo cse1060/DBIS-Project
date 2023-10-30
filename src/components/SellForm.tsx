@@ -8,7 +8,7 @@ export default function SellForm() {
     async function addProperty() {
         const data = await axios.post("/api/addProperty", sale);
         if (data.data.status === "success") {
-            router.push(`/postproperty/add_property?action=${sale.action}&type=${sale.type}&subtype=${sale.subType}`);
+            router.push(`/postproperty/add_property?id=${data.data.propertyId}`);
         }
     }
     const [sale, setSale] = useState({ action: "sale", type: "", subType: "", city: "" })

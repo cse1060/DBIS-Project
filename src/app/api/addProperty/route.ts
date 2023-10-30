@@ -41,3 +41,31 @@ export async function POST(request: NextRequest) {
     }
 
 }
+
+export async function GET(request: NextRequest) {
+    const URL = request.url;
+    console.log(URL);
+    const data = URL.split("=");
+    const property_id = data[1];
+
+    const property = await prisma.property.findUnique({
+        where: {
+            id: parseInt(property_id)
+        }
+    })
+
+    console.log(property);
+
+    if (property !== null) {
+        return NextResponse.json({
+            action: property.action,
+            type: property.Property_Type,
+            subType: property.subType,
+        })
+    } else {
+        return NextResponse.json({
+            success: false
+        })
+    }
+
+}

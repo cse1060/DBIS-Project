@@ -7,9 +7,9 @@ export default function RentForm() {
 
     const router = useRouter();
     async function addProperty() {
-        const data = await axios.post("/addProperty", rent);
+        const data = await axios.post("api/addProperty", rent);
         if (data.data.status === "success") {
-            router.push(`/postproperty/add_property?action=${rent.action}&type=${rent.type}&subtype=${rent.subType}`);
+            router.push(`/postproperty/add_property?id=${data.data.propertyId}`);
         }
     }
     const [rent, setRent] = useState({ action: "rent", type: "", subType: "", city: "" })

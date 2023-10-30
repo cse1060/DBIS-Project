@@ -93,7 +93,7 @@ model Agreement {
 // }
 
 model Commercial_Property {
-  id          Int        @id @unique
+  id          Int        @id @unique @default(autoincrement())
   garages     Int
   floors      Int
   area        Decimal
@@ -105,7 +105,7 @@ model Commercial_Property {
 }
 
 model Residential_Property {
-  id          Int        @id @unique
+  id          Int        @id @unique @default(autoincrement())
   rooms       Int
   balconies   Int
   area        Decimal
