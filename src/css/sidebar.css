@@ -1,0 +1,112 @@
+.Sidebar{
+    background-color: black;
+    height: 80px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    z-index: 1000;
+}
+.menu-bars{
+    margin-left: 2rem;
+    font-size: 2rem;
+    background: none;
+}
+.nav-menu{
+    background-color: black;
+    width: 250px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    transition: 850ms;
+    z-index: 1001;
+}
+.nav-menu.active{
+    left: 0;
+    transition: 350ms;
+}
+.nav-menu2{
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    transition: 850ms;
+}
+.nav-menu2.active{
+    left: 0;
+    transition: 350ms;
+}
+.nav-text{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 8px 0px 8px 16px;
+    list-style: none;
+    height: 60px;
+}
+.nav-text a{
+    text-decoration: none;
+    color: #f5f5f5;
+    font-size: 18px;
+    width: 95%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    padding: 0 16px;
+    
+}
+.nav-text a:hover{
+    background-color: cyan;
+    color: red;
+}
+.nav-menu-items{
+    width: 100%;
+}
+.navbar-toggle{
+    background-color: black;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+span{
+    margin-left: 16px;
+
+}
+.profile{
+    /* transform: scale(2); */
+    margin-top: 1.5rem;
+    /* margin-bottom: 2rem; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.profile h2{
+    color: white;
+    border: 1px solid white;
+    
+    padding:8px;
+    border-radius: 10px;
+}
+.profile a:hover h2{
+    background-color: cyan;
+    color: red;
+}
+a.profile svg{
+    position: relative;
+    margin-bottom: 4.5rem;
+    
+    transform: scale(10);
+    /* left: 50%; */
+    /* transform: translate(-50%,-50%) scale(1); */
+    
+}

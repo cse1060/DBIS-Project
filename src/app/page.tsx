@@ -1,9 +1,20 @@
-import "../css/home.css"
+// import PropertyCard from "@/components/property_card"
+"use client"
+import Sidebar from "@/components/SideBar"
+import NewsCard from "@/components/NewsCard";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+// import "../css/home.css"
 import Link from "next/link"
 export default function Home() {
     return (
         <>
-            <Link href="/postproperty">Post Property</Link>
+
+            <Sidebar />
+
+            <NewsCard/>
+
+
+            {/* <Link href="/postproperty">Post Property</Link>
             <div className="mainimg">
             </div>
             <div className="buttons">
@@ -26,7 +37,7 @@ export default function Home() {
                     lease
                 </div>
 
-            </div>
+            </div> */}
         </>
     )
 }
