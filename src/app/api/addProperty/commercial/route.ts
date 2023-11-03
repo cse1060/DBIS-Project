@@ -8,6 +8,8 @@ export async function POST(request: NextRequest) {
     try {
         const reqBody = await request.json();
 
+        const images = reqBody.images;
+
         const commercials = await prisma.commercial_Property.findMany();
 
         const id = parseFloat(commercials.length + 1)
@@ -15,27 +17,43 @@ export async function POST(request: NextRequest) {
 
         const details = await prisma.commercial_Property.create({
             data: {
-                garages: reqBody.garages,
-                floors: reqBody.floors,
-                area: reqBody.area,
-                // description: reqBody.description,
-                for_sale: reqBody.for_sale,
-                for_rent: reqBody.for_rent,
-                sale_amount: reqBody.sale_amount,
-                rent_amount: reqBody.rent_amount,
+                garages: reqBody.property.garages,
+                floors: reqBody.property.floors,
+                area: reqBody.property.area,
+                for_sale: reqBody.property.for_sale,
+                for_rent: reqBody.property.for_rent,
+                sale_amount: reqBody.property.sale_amount,
+                rent_amount: reqBody.property.rent_amount,
                 id: id
             }
         })
 
+        console.log(images);
+
+        images.map(async (img: any, id: any) => {
+            const savedImg = await prisma.images.create({
+                data: {
+                    property_id: reqBody.property.property_id,
+                    url: img
+                }
+            })
+            console.log(savedImg);
+
+        })
+
         console.log(details);
-        console.log(reqBody.property_id);
 
         const property = await prisma.property.update({
             where: {
-                id: parseInt(reqBody.property_id)
+                id: parseInt(reqBody.property.property_id)
             },
             data: {
-                Commercial_Property_id: details.id
+                Commercial_Property_id: details.id,
+                name: reqBody.property.name,
+                address: reqBody.property.address,
+                latitude: reqBody.property.latitude,
+                longitude: reqBody.property.longitude,
+                description: reqBody.property.description,
             }
         })
 
