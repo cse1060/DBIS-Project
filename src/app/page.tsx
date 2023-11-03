@@ -1,6 +1,10 @@
+"use client";
 import "../css/home.css"
 import Link from "next/link"
+
+
 export default function Home() {
+
     return (
         <>
             <Link href="/postproperty">Post Property</Link>
