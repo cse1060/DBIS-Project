@@ -9,7 +9,6 @@ export async function POST(request: NextRequest) {
         const reqBody = await request.json();
         // const userId = await getDataFromToken(request);
 
-        // console.log(reqBody, "***");
 
         const residentials = await prisma.residential_Property.findMany();
         // console.log(residentials, "***");
@@ -17,29 +16,49 @@ export async function POST(request: NextRequest) {
         const id = parseFloat(residentials.length + 1)
         // console.log(id);
 
+        const images = reqBody.images;
+
         const details = await prisma.residential_Property.create({
             data: {
-                rooms: reqBody.rooms,
-                balconies: reqBody.balconies,
-                area: reqBody.area,
-                description: reqBody.description,
-                for_sale: reqBody.for_sale,
-                for_rent: reqBody.for_rent,
-                sale_amount: reqBody.sale_amount,
-                rent_amount: reqBody.rent_amount,
+                rooms: reqBody.property.rooms,
+                balconies: reqBody.property.balconies,
+                area: reqBody.property.area,
+                for_sale: reqBody.property.for_sale,
+                for_rent: reqBody.property.for_rent,
+                description: reqBody.property.description,
+                sale_amount: reqBody.property.sale_amount,
+                rent_amount: reqBody.property.rent_amount,
                 id: id
             }
         })
 
-        console.log(details);
-        console.log(reqBody.property_id);
+        // console.log(details);
+        // console.log(reqBody.property.property_id);
+
+        console.log(images);
+
+        images.map(async (img: any, id: any) => {
+            const savedImg = await prisma.images.create({
+                data: {
+                    property_id: reqBody.property.property_id,
+                    url: img
+                }
+            })
+            console.log(savedImg);
+
+        })
 
         const property = await prisma.property.update({
             where: {
-                id: parseInt(reqBody.property_id)
+                id: parseInt(reqBody.property.property_id)
             },
             data: {
-                Residential_Property_id: details.id
+                Residential_Property_id: details.id,
+                name: reqBody.property.name,
+                address: reqBody.property.address,
+                latitude: reqBody.property.latitude,
+                longitude: reqBody.property.longitude,
+                description: reqBody.property.description
             }
         })
 

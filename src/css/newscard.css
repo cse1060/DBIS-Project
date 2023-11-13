@@ -45,19 +45,7 @@ transition: 0.5s;
 z-index: -1;
 
 }
-.overlay{
 
-    text-align: center;
-    
-    position: absolute;
-    left: 180px;
-    
-    /* transform: translate(-50%,0); */
-    display: block ;
-    opacity: 0;
-    transition: all 0.5s ease;
-
-}
 .news_read{
     text-align: center;
     position: absolute;

@@ -35,6 +35,9 @@ model Property {
   agreement_id            Int?
   date_added              DateTime
   city                    String
+  name                    String?
+  description             String?
+  address                 String?
   latitude                Decimal?
   longitude               Decimal?
   action                  String
@@ -50,6 +53,15 @@ model Property {
 
   Commercial_Property  Commercial_Property?  @relation(fields: [Commercial_Property_id], references: [id])
   Residential_Property Residential_Property? @relation(fields: [Residential_Property_id], references: [id])
+  Images               Images[]
+  User_Profile         User_Profile          @relation(fields: [agent_id, id], references: [user_id, prop_id])
+}
+
+model Images {
+  id          Int      @id @unique @default(autoincrement())
+  url         String
+  property_id Int
+  Property    Property @relation(fields: [property_id], references: [id])
 }
 
 model User_Profile {
@@ -62,6 +74,7 @@ model User_Profile {
 
   user     User       @relation(fields: [user_id], references: [id])
   Comments Comments[]
+  Property Property[]
 
   @@id([prop_id, user_id])
   @@unique([prop_id, user_id])

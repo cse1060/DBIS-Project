@@ -12,6 +12,16 @@ export async function POST(request: NextRequest) {
 
         console.log(userId);
 
+        const properties = await prisma.property.findMany();
+
+        const userProfile = await prisma.user_Profile.create({
+            data: {
+                prop_id: properties.length + 1,
+                user_id: userId,
+                isOwned: true
+            }
+        })
+
         const property = await prisma.property.create({
             data: {
                 agent_id: userId,
@@ -23,13 +33,6 @@ export async function POST(request: NextRequest) {
             }
         })
 
-        const userProfile = await prisma.user_Profile.create({
-            data: {
-                prop_id: property.id,
-                user_id: userId,
-                isOwned: true
-            }
-        })
         console.log(property);
 
         return NextResponse.json({

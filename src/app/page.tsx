@@ -4,8 +4,12 @@ import Sidebar from "@/components/SideBar"
 import NewsCard from "@/components/NewsCard";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // import "../css/home.css"
+import "../css/home.css"
 import Link from "next/link"
+
+
 export default function Home() {
+
     return (
         <>
 
