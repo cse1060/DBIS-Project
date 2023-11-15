@@ -3,20 +3,20 @@ import React from 'react'
 import "../css/navbar.css"
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
-import { useSession , signOut } from 'next-auth/react';
+import { useSession, signOut } from 'next-auth/react';
 
 export default function Navbar() {
   const router = useRouter();
-  const {data : session} = useSession();
-  const logout =async ()=>{
+  const { data: session } = useSession();
+  const logout = async () => {
     try {
       const response = await axios.get("/api/users/logout");
-      if(session){
-         signOut();
+      if (session) {
+        signOut();
       }
       router.push('/login');
 
-    } catch (error:any) {
+    } catch (error: any) {
       console.log(error);
     }
   }
@@ -33,16 +33,17 @@ export default function Navbar() {
     // </div>
     <>
       <center className='above'>
-        
+
         <nav id="main-nav" className="navigationWrapper">
           <div className="navbar">
             <ul>
               <li>
                 <center>
                   <a href="#">
-                    <img src="./images/logo.jpg" className="logoimg" />
+                    <img src="/images/logo.jpg" className="logoimg" />
                     Home
                   </a>
+                  <button onClick={logout}>Logout</button>
                 </center>
               </li>
               <li>

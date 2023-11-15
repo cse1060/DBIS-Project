@@ -22,8 +22,13 @@ export async function POST(request: NextRequest) {
             }
         })
 
+        console.log(userProfile);
+        console.log(userId);
+
+
         const property = await prisma.property.create({
             data: {
+                id: properties.length + 1,
                 agent_id: userId,
                 date_added: new Date(),
                 city: city,

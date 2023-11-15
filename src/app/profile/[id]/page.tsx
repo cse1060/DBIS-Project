@@ -7,7 +7,7 @@ export default function UserProfile({ params }: any) {
   var data: any;
 
   const [loading, setLoading] = useState(true);
-  const [userName, setUserName] = useState("");
+  const [userName, setUserName] = useState(params.id);
 
 
   async function getProfile() {
@@ -18,14 +18,18 @@ export default function UserProfile({ params }: any) {
     setLoading(false);
   }
 
+  async function getUserName() {
+    setUserName(await params.id);
+    setLoading(false);
+  }
 
   useEffect(() => {
-    setUserName(params.id);
+    getUserName();
   }, [])
 
-  useEffect(() => {
-    setLoading(false);
-  }, [userName])
+  // useEffect(() => {
+  //   setLoading(false);
+  // }, [userName])
   if (loading) {
     return (
       <h1>Loading</h1>
