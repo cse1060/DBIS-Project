@@ -1,0 +1,13 @@
+.swiper-wrapper{
+    padding-top: 20vh;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+*{margin: 0;}
+.slide{
+    overflow: visible;
+}
+.swiper{
+    height: 85vh;
+}
