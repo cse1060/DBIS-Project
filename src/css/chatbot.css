@@ -1,0 +1,56 @@
+.chatbot {
+    margin-top: 10vh;
+    height: 80vh;
+    width: 30vw;
+    position: fixed;
+    right: 5%;
+    top: 0;
+    z-index: 1000;
+    border-radius: 20px;
+    border: 5px #222 solid;
+    overflow: hidden;
+    background-color: #F3F6FC;
+}
+
+.chatbot>.drag {
+    position: absolute;
+    height: 7vh;
+    width: 30vw;
+    background-color: #222;
+}
+
+.chatbot>.drag>.dots {
+    color: rgb(184, 184, 184);
+    text-align: center;
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.chatbot>.drag>.title {
+    color: rgb(184, 184, 184);
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.chatbot>.drag_bot {
+    position: relative;
+    top: -7vh;
+    height: 7vh;
+    width: 30vw;
+    background-color: #222;
+}
+
+
+.chatbot_frame {
+    height: 80vh;
+    width: 30vw;
+}
+
+.chatbot_btn {
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    padding: 30px;
+    background-color: blueviolet;
+}

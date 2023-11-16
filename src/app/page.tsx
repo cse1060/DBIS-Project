@@ -2,6 +2,7 @@
 "use client"
 import Sidebar from "@/components/SideBar"
 import NewsCard from "@/components/NewsCard";
+import ChatBot from "@/components/ChatBot"
 // import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // import "../css/home.css"
 import "../css/home.css"
@@ -12,9 +13,10 @@ export default function App() {
     return (
         <>
 
-            <Sidebar />
+            {/* <Sidebar />
+            <NewsCard /> */}
 
-            <NewsCard />
+            <ChatBot />
 
 
             {/* <Link href="/postproperty">Post Property</Link>
