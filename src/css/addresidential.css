@@ -1,0 +1,97 @@
+.addtitle2 {
+    color: #091e42;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.aform2 {
+    background-color: #3498db;
+    position: absolute;
+    right: 0;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 30px 40px rgba(0, 0, 0, 0.8);
+    margin-right: 6rem;
+    /* height: 1100px; */
+}
+
+.aforme2 {
+    color: #fff;
+    margin-top: 10px;
+    display: flex;
+    /* height: 30px; */
+    justify-content: space-between;
+}
+
+.aforme2 input {
+    /* border: 1px solid #091e42; */
+    border-radius: 10px;
+    margin-left: 5px;
+    color: #091e42;
+    width: 350px;
+}
+
+.addsubmit2 {
+
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background-color: #3498db;
+    /* Your desired background color */
+    color: #ffffff;
+    /* Text color */
+    transition: background-color 0.3s ease;
+}
+
+.addsubmit2:hover {
+    background-color: #2980b9;
+}
+
+.arate2 {
+    /* width: 500px; */
+    position: relative;
+    /* margin: auto; */
+    display: flex;
+    justify-content: end;
+    /* bottom: 300px; */
+    /*  */
+}
+
+.arate2 input {
+    border-radius: 10px;
+    margin-left: 15px;
+    color: #091e42;
+    width: 350px;
+}
+
+.arate22 {
+    width: 500px;
+    background-color: #3498db;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-right: 77px;
+
+}
+
+.amap2 {
+    margin-left: 150px;
+}
+
+.aupload2 {
+    background-color: #091e42;
+    color: white;
+    /* width: 100px; */
+    padding: 10px;
+    border-radius: 10px;
+    /* margin-top: 10px; */
+}

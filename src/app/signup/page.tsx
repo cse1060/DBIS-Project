@@ -31,7 +31,7 @@ export default function SignupPage() {
 
     return (
       <div id="container" className="container sign-up">
-        <SigninButton type="signup" />
+        
             <h1>{loading ? "Processing" : "Signup"}</h1>
             
             
@@ -76,6 +76,7 @@ export default function SignupPage() {
                   />
                 </div>
                 <button onClick={onSignup}>Signup here</button>
+                <SigninButton type="signup" />
                 <p>
                   <span>Already have an account?</span>
                   <Link href="/login">Visit Login Page</Link>

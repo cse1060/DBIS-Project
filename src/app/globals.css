@@ -6,6 +6,12 @@
 .map {
     height: 500px;
     width: 500px;
+    z-index: -1;
+}
+
+.map2 {
+    height: 300px;
+    width: 500px;
 }
 
 .selected {

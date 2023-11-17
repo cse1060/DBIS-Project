@@ -1,11 +1,13 @@
-body{
+body {
   padding: 0;
 }
+
 .property-details-container {
   display: flex;
   flex-direction: column;
-  padding-left: 15%;
+  padding-left: 10%;
   border: 1px solid;
+  padding-right: 10%;
 }
 
 .property-details-row {
@@ -13,7 +15,8 @@ body{
   align-items: center;
   margin-bottom: 10px;
 }
-section{
+
+section {
   padding: 1rem;
 }
 
@@ -42,6 +45,7 @@ section {
 
 h2 {
   font-size: 1.5em;
+  font-weight: bolder;
   margin-bottom: 10px;
 }
 
@@ -53,12 +57,13 @@ ul {
 li {
   margin-bottom: 5px;
 }
+
 .Head {
   color: hsl(0, 23%, 97%);
-  font-size: 2rem!important;
-  font-weight: bold!important;
+  font-size: 2rem !important;
+  font-weight: bold !important;
   font-family: monospace;
-  letter-spacing: 7px!important;
+  letter-spacing: 7px !important;
   cursor: pointer;
   text-transform: uppercase;
 }
@@ -70,10 +75,12 @@ li {
   -webkit-text-fill-color: transparent;
   animation: shine 2s infinite linear;
 }
+
 @keyframes shine {
   0% {
     background-position: 0;
   }
+
   100% {
     background-position: 1000px;
   }
@@ -110,17 +117,18 @@ li {
   inherits: true;
   initial-value: 0turn;
 }
-.propertyType{
+
+.propertyType {
   margin-left: 1rem;
   padding-left: 1rem;
   border-left: 1px solid black;
 }
-.property_
-{
+
+.property_ {
   display: flex;
 }
 
-.propertyimg{
+.propertyimg {
   height: 15vh;
 }
 
@@ -137,15 +145,16 @@ li {
   padding: 20px;
   text-align: center;
 }
-.alt{
+
+.alt {
   // background-color: rgb(175, 202, 202);
 }
 
-.chatting{
+.chatting {
   background-color: aliceblue;
 }
 
-.flex-comment{
+.flex-comment {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

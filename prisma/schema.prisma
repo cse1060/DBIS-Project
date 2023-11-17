@@ -24,6 +24,7 @@ model User {
   forgotPasswordTokenExpiry DateTime?
   verifyToken               String?
   verifyTokenExpiry         DateTime?
+  img                       String?
   User_Profile              User_Profile[]
   Agreement                 Agreement[]
   Property                  Property[]
@@ -60,6 +61,7 @@ model Property {
   agreement_id            Int?
   date_added              DateTime
   city                    String
+  rating                  String?
   name                    String?
   description             String?
   address                 String?
@@ -136,9 +138,9 @@ model Commercial_Property {
   floors      Int
   area        Decimal
   for_sale    Boolean?
-  sale_amount BigInt?
+  sale_amount Int?
   for_rent    Boolean?
-  rent_amount BigInt?
+  rent_amount Int?
   Property    Property[]
 }
 
@@ -149,8 +151,8 @@ model Residential_Property {
   area        Decimal
   description String
   for_sale    Boolean?
-  sale_amount BigInt?
+  sale_amount Int?
   for_rent    Boolean?
-  rent_amount BigInt?
+  rent_amount Int?
   Property    Property[]
 }

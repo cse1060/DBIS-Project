@@ -15,7 +15,7 @@ export default function Upload_Widget(props: any) {
         width="960"
         height="600"
         alt="img"
-        src="wd83sw8cqee2xzxfck5d"
+        src="nhrxorzsnizyntshzowp"
       /> */}
     </div>
 

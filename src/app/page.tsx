@@ -8,10 +8,12 @@ import ChatBot from "@/components/ChatBot";
 import "../css/home.css";
 import Link from "next/link";
 import Home from "@/components/Home";
-import "../css/home.css"
+import "../css/home.css";
+import Navbar from "@/components/Navbar";
 export default function App() {
   return (
     <>
+      <Navbar />
       <Home />
 
       {/* <Sidebar />

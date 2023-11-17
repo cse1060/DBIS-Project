@@ -27,10 +27,10 @@ export default function Navbar() {
     //     <button classNameName="n tenants">For Tenants</button>
     //     <button classNameName="n owners">For Owners</button>
     //     <button classNameName="n dealers">For Dealers/builders</button>
-    //     <button onClick={logout}>Logout</button>
     //   </div>
     // </div>
     <>
+      <button onClick={logout}>Logout</button>
       <center className="above">
         <nav id="main-nav" className="navigationWrapper">
           <div className="navbar">

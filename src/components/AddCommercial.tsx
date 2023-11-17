@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Map from "@/helpers/Map";
 import Upload_Widget from '@/helpers/Upload_Widget';
-
+import "../css/addcommercial.css"
 export default function AddCommercial(props: any) {
 
     const router = useRouter();
@@ -66,50 +66,66 @@ export default function AddCommercial(props: any) {
     return (
         <div>
             {props.action}
-            <label htmlFor="rooms" >Garages</label>
-            <input type="number"
-                onChange={(e) => setProperty({
-                    ...property,
-                    garages: parseFloat(e.target.value)
-                })} />
-
-            <label htmlFor="balconies">Floors</label>
-            <input type="number"
-                onChange={(e) => setProperty({
-                    ...property,
-                    floors: parseFloat(e.target.value)
-                })} />
-
-            <label htmlFor="area">Area</label>
-            <input type="number"
-                onChange={(e) => setProperty({
-                    ...property,
-                    area: parseFloat(e.target.value)
-                })} />
-
-            <label htmlFor="description">Description</label>
-            <input type="text"
-                onChange={(e) => setProperty({
-                    ...property,
-                    description: e.target.value
-                })} />
-            <label htmlFor="name">name</label>
-            <input type="text"
-                onChange={(e) => setProperty({
-                    ...property,
-                    name: e.target.value
-                })} />
-            <label htmlFor="address">address</label>
-            <input type="text"
-                onChange={(e) => setProperty({
-                    ...property,
-                    address: e.target.value
-                })} />
-
-            <h1>Lat : {position.lat} </h1>
-            <h1>Lng : {position.lng} </h1>
-            <Map position={position} changePos={changePos} coor={coor} changeCoor={changeCoor} />
-            <Upload_Widget addImg={addImages} />
+            <h1 className="addtitle" >For Rent</h1>
+            <div className="aform">
+                <div className="aforme">
+                    <label htmlFor="rooms" >Garages</label>
+                    <input type="number"
+                        onChange={(e) => setProperty({
+                            ...property,
+                            garages: parseFloat(e.target.value)
+                        })} />
+                </div>
+                <div className="aforme">
+                    <label htmlFor="balconies">Floors</label>
+                    <input type="number"
+                        onChange={(e) => setProperty({
+                            ...property,
+                            floors: parseFloat(e.target.value)
+                        })} />
+                    {/* load */}
+                </div>
+                <div className="aforme">
+                    <label htmlFor="area">Area</label>
+                    <input type="number"
+                        onChange={(e) => setProperty({
+                            ...property,
+                            area: parseFloat(e.target.value)
+                        })} />
+                </div>
+                <div className="aforme">
+                    <label htmlFor="name">name</label>
+                    <input type="text"
+                        onChange={(e) => setProperty({
+                            ...property,
+                            name: e.target.value
+                        })} />
+                </div>
+                <div className="aforme">
+                    <label htmlFor="address">address</label>
+                    <input type="text" style={{ height: "100px" }}
+                        onChange={(e) => setProperty({
+                            ...property,
+                            address: e.target.value
+                        })} />
+                </div>
+                <div className="aforme">
+                    <label htmlFor="description">Description</label>
+                    <input type="text" style={{ height: "300px" }}
+                        onChange={(e) => setProperty({
+                            ...property,
+                            description: e.target.value
+                        })} />
+                </div>
+            </div>
+            <div className="amap" style={{ display: "inline-block" }}>
+                <h1 className='loc'>Your current location</h1>
+                <h2 className='coordinates'>Lat : {position.lat} </h2>
+                <h2 className='coordinates'>Lng : {position.lng} </h2>
+                <center className='coordinates' style={{ color: "#091e42", fontWeight: "600" }}>Choose Location</center>
+                <Map position={position} changePos={changePos} coor={coor} changeCoor={changeCoor} />
+                <center><center className='aupload'><Upload_Widget addImg={addImages} /></center></center>
+            </div>
             {property.for_sale && (
                 <>
                     <label htmlFor="sale_amount">sale_amount</label>
@@ -123,18 +139,22 @@ export default function AddCommercial(props: any) {
 
             {property.for_rent && (
                 <>
-                    <label htmlFor="rate_amount">rate_amount</label>
-                    <input type="number"
-                        onChange={(e) => setProperty({
-                            ...property,
-                            rent_amount: parseFloat(e.target.value)
-                        })} />
+                    <div className="arate">
+                        <div className="arate2">
+                            <label htmlFor="rate_amount">rate_amount</label>
+                            <input type="number"
+                                onChange={(e) => setProperty({
+                                    ...property,
+                                    rent_amount: parseFloat(e.target.value)
+                                })} />
+                        </div>
+                    </div>
                 </>
             )}
 
             <hr />
 
-            <button onClick={updateProperty}>Submit</button>
+            <center><button className='addsubmit' onClick={updateProperty}>Submit</button></center>
         </div>
     )
 }
