@@ -1,7 +1,9 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { FaGoogle } from "react-icons/fa";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import '../css/sidebar2.css'
+import '../css/sidebar.css'
+import { MdGpsFixed } from "react-icons/md";
 import *as Faicons from "react-icons/fa"
 import *as Aiicons from "react-icons/ai"
 import *as Cgicons from "react-icons/cg"
@@ -10,7 +12,6 @@ import { IconContext } from 'react-icons'
 // import { a } from 'react-router-dom'
 import { useRouter } from 'next/navigation';
 import { SideBardata } from './sidebardata'
-
 function Sidebar2() {
 
     const router = useRouter();
@@ -47,7 +48,19 @@ function Sidebar2() {
         setDropdownOpen(!isDropdownOpen);
     };
 
-    var width = window.innerWidth
+    const useWidth = () => {
+        const [width, setWidth] = useState(0)
+        const handleResize = () => setWidth(window.innerWidth)
+        useEffect(() => {
+            handleResize()
+            window.addEventListener('resize', handleResize)
+            return () => window.removeEventListener('resize', handleResize)
+            // eslint-disable-next-line react-hooks/exhaustive-deps
+        }, [])
+        return width
+    }
+
+    var width = useWidth();
 
     const [sidebar, setSidebar] = useState(false)
     const showSidebar = () => setSidebar(!sidebar)
@@ -56,28 +69,52 @@ function Sidebar2() {
         <IconContext.Provider value={{ color: '#fff' }}>
             <div className="Sidebar">
                 <div className="sd">
-                    <div className="dropdown">
-
-                        <button className="dropdown-button" onClick={toggleDropdown}>
-
-                            <div className="dropc">
-
-                                {buttonName}<FaChevronDown id="dropi" /></div>
-                        </button>
-                        {isDropdownOpen && (
-                            <div className="dropdown-content">
-                                {dropdownItems.map((item) => (
-                                    <a key={item.value} href="#" onClick={() => changeButtonName(item.value)}>
-                                        {item.label}
+                    <div id="main-nav2" className="">
+                        <div className="">
+                            <ul>
+                                <li>
+                                    <a href="#" style={{ backgroundColor: "#091e42", height: "50px", paddingLeft: "5px", paddingRight: "5px", borderRadius: "10px" }}>
+                                        Property Type
+                                        <span className="arrow2">&#x25BC;</span>
                                     </a>
-                                ))}
-                            </div>
-                        )}
+                                    <ul className="submenu2">
+                                        <li>
+                                            <a href="#">Residential<span className="arrow2">&#x25B6;</span></a>
+                                            <ul className="submenu2-2">
+                                                <li>
+                                                    <a href="#" onClick={() => { setButtonName('buy'); setType('residential') }}>Buy</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" onClick={() => { setButtonName('rent'); setType('residential') }}>Rent</a>
+                                                </li>
+
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Commercial
+                                                <span className="arrow2">&#x25B6;</span>
+                                            </a>
+                                            <ul className="submenu2-2">
+                                                <li>
+                                                    <a href="#" onClick={() => { setButtonName('buy'); setType('commercial') }}>Buy</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" onClick={() => { setButtonName('rent'); setType('commercial') }}>Rent</a>
+                                                </li>
+
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                     <div className="search-container">
                         <input type="text" className="search-bar" placeholder="Search..." onChange={(e) => {
                             setCity(e.target.value)
                         }} />
+                        <MdGpsFixed style={{ color: "blue", position: "relative", left: "500px", top: "-30px" }} />
                         <button className="search-button" onClick={search_data}>Search</button>
                     </div>
                 </div>
@@ -85,6 +122,7 @@ function Sidebar2() {
                     <Faicons.FaBars onClick={showSidebar} />
                 </a>
             </div>
+
             <nav className={width > 425 ? (sidebar ? 'nav-menu active' : 'nav-menu') : (sidebar ? 'nav-menu2 active' : 'nav-menu2')}>
                 <ul className='nav-menu-items' onClick={showSidebar}>
                     <li className="navbar-toggle">
@@ -96,7 +134,7 @@ function Sidebar2() {
                     <li className="profile">
                         <a href='/profile' className='profile'>
                             <Cgicons.CgProfile />
-                            <h2>view profile</h2>
+                            <h2 className='rv'>view profile</h2>
                         </a>
                     </li>
 

@@ -1,9 +1,9 @@
 "use client";
-import React from 'react'
-import "../css/navbar.css"
-import { useRouter } from 'next/navigation';
-import axios from 'axios';
-import { useSession, signOut } from 'next-auth/react';
+import React from "react";
+import "../css/navbar.css";
+import { useRouter } from "next/navigation";
+import axios from "axios";
+import { useSession, signOut } from "next-auth/react";
 
 export default function Navbar() {
   const router = useRouter();
@@ -14,12 +14,11 @@ export default function Navbar() {
       if (session) {
         signOut();
       }
-      router.push('/login');
-
+      router.push("/login");
     } catch (error: any) {
       console.log(error);
     }
-  }
+  };
 
   return (
     // <div>
@@ -28,11 +27,11 @@ export default function Navbar() {
     //     <button classNameName="n tenants">For Tenants</button>
     //     <button classNameName="n owners">For Owners</button>
     //     <button classNameName="n dealers">For Dealers/builders</button>
-    //     <button onClick={logout}>Logout</button>
     //   </div>
     // </div>
     <>
-      <center className='above'>
+      <button onClick={logout}>Logout</button>
+      <center className="above">
 
         <nav id="main-nav" className="navigationWrapper">
           <div className="navbar">
@@ -43,7 +42,6 @@ export default function Navbar() {
                     <img src="/images/logo.jpg" className="logoimg" />
                     Home
                   </a>
-                  <button onClick={logout}>Logout</button>
                 </center>
               </li>
               <li>
@@ -51,31 +49,33 @@ export default function Navbar() {
                   Property Options
                   <span className="arrow">&#x25BC;</span>
                 </a>
-                <ul className="submenu">
-                  <li>
-                    <a href="#">Buy</a>
-                  </li>
-                  <li>
-                    <a href="#">Rent</a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      Sell
-                      <span className="arrow">&#x25B6;</span>
-                    </a>
-                    <ul className="submenu-2">
-                      <li>
-                        <a href="#">Bunglow</a>
-                      </li>
-                      <li>
-                        <a href="#">Flat</a>
-                      </li>
-                      <li>
-                        <a href="#">Plot</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
+                <div>
+                  <ul className="submenu">
+                    <li>
+                      <a href="#">Buy</a>
+                    </li>
+                    <li>
+                      <a href="#">Rent</a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        Sell
+                        <span className="arrow">&#x25B6;</span>
+                      </a>
+                      <ul className="submenu-2">
+                        <li>
+                          <a href="#">Bunglow</a>
+                        </li>
+                        <li>
+                          <a href="#">Flat</a>
+                        </li>
+                        <li>
+                          <a href="#">Plot</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
               </li>
               <li>
                 <a href="#">
@@ -96,6 +96,12 @@ export default function Navbar() {
               </li>
               <li>
                 <a href="#">About</a>
+              </li>
+              <li>
+                <a href="#">
+
+                  <button onClick={logout}>Logout</button>
+                </a>
               </li>
             </ul>
           </div>

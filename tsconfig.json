@@ -35,7 +35,8 @@
     ".next/types/**/*.ts",
     "src/app/api/addProperty/residential",
     "src/components/ChatBox.jsx",
-    "src/app/profile/[id]/page.jsx"
+    "src/app/profile/[id]/page.jsx",
+    "src/app/property/[id]/page.jsx"
   ],
   "exclude": [
     "node_modules"

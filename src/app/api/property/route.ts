@@ -53,6 +53,12 @@ export async function POST(request: NextRequest) {
         }
     })
 
+    const images = prisma.images.findMany({
+        where: {
+            property_id: parseInt(id)
+        }
+    })
+
     const comments = await prisma.comments.findMany({
         where: {
             prop_id: parseInt(id)
@@ -94,7 +100,9 @@ export async function POST(request: NextRequest) {
         property: property,
         details: details,
         user: user,
-        writer: writers
+        comments: comments,
+        writer: writers,
+        images: images
     })
 
 }

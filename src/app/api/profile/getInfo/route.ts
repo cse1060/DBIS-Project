@@ -30,8 +30,9 @@ export async function POST(request: NextRequest) {
 
         let imagesOwned: any[] = [];
 
-        properties_owned.map((obj: any) => {
-            const image = prisma.images.findUnique({
+        properties_owned.map(async (obj: any) => {
+            console.log(obj.Property[0].id)
+            const image = await prisma.images.findMany({
                 where: {
                     property_id: obj.Property[0].id
                 }

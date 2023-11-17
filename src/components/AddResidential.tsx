@@ -3,7 +3,8 @@ import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Map from "@/helpers/Map";
 import Upload_Widget from '@/helpers/Upload_Widget';
-
+import "../css/addresidential.css"
+import Navbar from './Navbar';
 export default function AddResidential(props: any) {
 
     const router = useRouter();
@@ -62,77 +63,99 @@ export default function AddResidential(props: any) {
 
     return (
         <div>
-            {props.action}
-            <label htmlFor="rooms" >Rooms</label>
-            <input type="number"
-                onChange={(e) => setProperty({
-                    ...property,
-                    rooms: parseFloat(e.target.value)
-                })} />
-
-            <label htmlFor="balconies">Balconies</label>
-            <input type="number"
-                onChange={(e) => setProperty({
-                    ...property,
-                    balconies: parseFloat(e.target.value)
-                })} />
-
-            <label htmlFor="area">Area</label>
-            <input type="number"
-                onChange={(e) => setProperty({
-                    ...property,
-                    area: parseFloat(e.target.value)
-                })} />
-
-            <label htmlFor="description">Description</label>
-            <input type="text"
-                onChange={(e) => setProperty({
-                    ...property,
-                    description: e.target.value
-                })} />
-
-            <label htmlFor="name">name</label>
-            <input type="text"
-                onChange={(e) => setProperty({
-                    ...property,
-                    name: e.target.value
-                })} />
-            <label htmlFor="address">address</label>
-            <input type="text"
-                onChange={(e) => setProperty({
-                    ...property,
-                    address: e.target.value
-                })} />
-
-
-            <Map position={position} changePos={changePos} coor={coor} changeCoor={changeCoor} />
-            <Upload_Widget addImg={addImages} />
-
-            {property.for_sale && (
-                <>
-                    <label htmlFor="sale_amount">sale_amount</label>
+            <Navbar />
+            <div className="nav_div"></div>
+            <h1 className="addtitle2" >For {props.action}</h1>
+            <div className="aform2">
+                <div className="aforme2">
+                    <label htmlFor="rooms" >Rooms</label>
                     <input type="number"
                         onChange={(e) => setProperty({
                             ...property,
-                            sale_amount: parseFloat(e.target.value)
+                            rooms: parseFloat(e.target.value)
                         })} />
+                </div>
+                <div className="aforme2">
+                    <label htmlFor="balconies">Balconies</label>
+                    <input type="number"
+                        onChange={(e) => setProperty({
+                            ...property,
+                            balconies: parseFloat(e.target.value)
+                        })} />
+                </div>
+                <div className="aforme2">
+                    <label htmlFor="area">Area</label>
+                    <input type="number"
+                        onChange={(e) => setProperty({
+                            ...property,
+                            area: parseFloat(e.target.value)
+                        })} />
+                </div>
+
+                <div className="aforme2">
+                    <label htmlFor="name">name</label>
+                    <input type="text"
+                        onChange={(e) => setProperty({
+                            ...property,
+                            name: e.target.value
+                        })} />
+                </div>
+                <div className="aforme2">
+                    <label htmlFor="address">address</label>
+                    <input type="text" style={{ height: "100px" }}
+                        onChange={(e) => setProperty({
+                            ...property,
+                            address: e.target.value
+                        })} />
+                </div>
+                <div className="aforme2">
+                    <label htmlFor="description">Description</label>
+                    <input type="text"
+                        style={{ height: "300px" }}
+                        onChange={(e) => setProperty({
+                            ...property,
+                            description: e.target.value
+                        })} />
+                </div>
+            </div>
+            <div className="amap2" style={{ display: "inline-block" }}>
+                <Map position={position} changePos={changePos} coor={coor} changeCoor={changeCoor} />
+                <center><center className='aupload2'><h1>Property Images</h1><Upload_Widget addImg={addImages} /></center></center>
+            </div>
+            {property.for_sale && (
+                <>
+                    <div className="arate2">
+                        <div className="arate22">
+                            <label htmlFor="sale_amount">sale_amount</label>
+                            <input type="number"
+                                onChange={(e) => setProperty({
+                                    ...property,
+                                    sale_amount: parseFloat(e.target.value)
+                                })} />
+                        </div>
+                    </div>
+
                 </>
             )}
 
             {property.for_rent && (
                 <>
-                    <label htmlFor="rate_amount">rate_amount</label>
-                    <input type="number"
-                        onChange={(e) => setProperty({
-                            ...property,
-                            rent_amount: parseFloat(e.target.value)
-                        })} />
+                    <div className="arate2">
+                        <div className="arate22">
+                            <label htmlFor="rate_amount">rent amount</label>
+                            <input type="number"
+                                onChange={(e) => setProperty({
+                                    ...property,
+                                    rent_amount: parseFloat(e.target.value)
+                                })} />
+                        </div>
+                    </div>
                 </>
             )}
 
             <hr />
 
-            <button onClick={updateProperty}>Submit</button>
+            <center><button className='addsubmit2' onClick={updateProperty}>Submit</button></center>
         </div>
     )
 }

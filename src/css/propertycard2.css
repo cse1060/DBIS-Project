@@ -1,0 +1,134 @@
+.property-card-2 {
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
+    height: 50vh;
+    width: 50vw;
+    top: 50px;
+    /* margin-top: 100px;
+    margin-left: 200px; */
+    box-shadow: 2px 2px 5px rgb(0, 0, 0, 0.5);
+}
+
+.property-card-2>div {
+    height: 100%;
+    width: 50%;
+}
+
+.card-image-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-image-div * {
+    z-index: 0;
+}
+
+.card-body {
+    padding: 0px;
+}
+
+.card-image {
+    border-radius: 10px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel {
+    height: 100%;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+.carousel-item {
+    height: 100%;
+}
+
+.card-details {
+    height: 100%;
+    width: 125%;
+    transform: translateX(-18%);
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-details * {
+    z-index: 1;
+    width: 80%;
+}
+
+.carousel-control-next {
+    transform: translateX(-80%);
+}
+
+.property-name {
+    margin-top: 5%;
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+.property-desc-1 * {
+    margin: none;
+}
+
+.property-features {
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+}
+
+.property-features>div {
+    width: 33%;
+    height: 100%;
+    text-align: center;
+    align-items: center;
+}
+
+.property-features>div>p {
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+.property-desc-2>p {
+    width: 100%;
+}
+
+.large-font {
+    font-size: xxx-large;
+}
+
+.top-20 {
+    position: relative;
+    top: 20vh;
+}
+
+.property-buttons {
+    align-items: center;
+    height: 20%;
+}
+
+.property-buttons>ion-icon {
+    fill: red;
+    height: 100%;
+}
+
+
+@keyframes like {
+    0% {
+        transform: scale(1);
+    }
+
+    90% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}

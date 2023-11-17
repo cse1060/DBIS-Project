@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Ubuntu:wght@700&display=swap');
+
+.page {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 30% 65%;
+    grid-column-gap: 5%;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    height: 100vh;
+    /* overflow: auto; */
+}
+
+.budget {
+    margin: 10px;
+    font-family: 'open sans';
+    font-size: 16px;
+    color: #091e42;
+    font-weight: 600;
+}
+
+.left input {
+    margin: 10px;
+    width: 70%;
+}
+
+.mbudget {
+    padding-left: 5px;
+    margin: 10px;
+    font-family: 'open sans';
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+    background-color: #091e42;
+    width: 70%;
+
+}
+
+.grid-item {
+    margin: 10px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    height: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ptypes li h4 {
+    margin: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border: 1px solid #091e42;
+    display: inline-block;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ptypes li h4:hover {
+    cursor: pointer;
+    background-color: #D3E0FF;
+}
+
+.ptypes li:active h4 {
+    background-color: #D3E0FF;
+}
+
+.btypes {
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.titler {
+    font-size: 20px;
+    color: #091e42;
+    font-family: 'open sans';
+    font-weight: 600;
+    margin-left: 25px;
+}

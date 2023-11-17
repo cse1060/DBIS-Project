@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+.cld_img {
+    object-fit: cover;
+}
+
 .card {
     background-color: #36454F;
     color: gold;

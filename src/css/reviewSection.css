@@ -1,0 +1,41 @@
+.review-section {
+  max-width: 600px;
+  margin: 1rem;
+  /* padding: 20px; */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.star-rating {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.star-filled {
+  color: #f1c40f;
+  cursor: pointer;
+}
+
+.star-empty {
+  color: #ccc;
+  cursor: pointer;
+}
+
+button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+.revuu{
+    display: flex;
+    justify-content: space-evenly;
+}

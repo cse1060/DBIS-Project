@@ -2,11 +2,11 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import "@/css/profile.css"
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
 import PropertyCard from '@/components/property_card';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import Loading from '@/components/Loading';
+import Navbar from '@/components/Navbar';
 
 
 export default function UserProfile({ params }) {
@@ -36,17 +36,19 @@ export default function UserProfile({ params }) {
   // }, [userName])
   if (loading) {
     return (
-      <h1>Loading</h1>
+      <Loading />
     )
   } else {
     if (data === undefined) {
       getProfile();
       return (
-        <h1>Loading</h1>
+        <Loading />
       )
     } else {
       return (
         <div>
+          <Navbar />
+          <div className='nav_div'></div>
           <div className="topspace"></div>
           <h1>User Dashboard</h1>
           <div className="dashboard-container">
@@ -91,7 +93,7 @@ export default function UserProfile({ params }) {
                         address={obj.Property[0].address}
                         city={obj.Property[0].city}
                         date={obj.Property[0].date_added}
-                        img={data.imagesOwned[idx].url}
+                        img={data.imagesOwned[idx].length > 0 ? data.imagesOwned[idx][data.imagesOwned[idx].length - 1].url : "nhrxorzsnizyntshzowp"}
                       />
                     </SwiperSlide>
                   )

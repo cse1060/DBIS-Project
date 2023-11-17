@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { FaGoogle } from "react-icons/fa";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
@@ -19,7 +20,7 @@ export default function LoginPage() {
       const response = await axios.post("/api/users/login", user);
       console.log(response.data);
       if (response.data.isnew) {
-        router.push(`/profile/create/${response.data.username}`);
+        router.push(`/profile/create / ${response.data.username}`);
       } else {
         router.push(`/profile/${response.data.username}`);
       }
@@ -30,7 +31,7 @@ export default function LoginPage() {
 
   return (
     <div id="container" className="container sign-in">
-      <SigninButton type="login" />
+      {/* <SigninButton type="login" /> */}
       <div className="row">
         <div className="col align-items-center flex-col sign-up"></div>
         <div className="col align-items-center flex-col sign-in">
@@ -59,6 +60,8 @@ export default function LoginPage() {
                 />
               </div>
               <button>Sign in</button>
+              <SigninButton type="signup" />
+              {/* <a href="#"> <center style={{ marginTop: "10px", cursor: "pointer", fontSize: "15px" }}><img style={{ width: "30px" }} src="images/google.svg"></img> Sign in with google</center></a> */}
               <p>
                 <Link href="/forgotPassword">Forgot Password ?</Link>
               </p>
@@ -85,3 +88,4 @@ export default function LoginPage() {
     </div>
   );
 }
+

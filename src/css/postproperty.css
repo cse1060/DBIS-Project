@@ -1,0 +1,60 @@
+.postProperty{
+    padding: 2rem;
+    margin: 2rem;
+}
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@600&family=Montserrat:wght@200&family=Noto+Sans:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@600&family=Lato:wght@300&family=Montserrat:wght@200&family=Noto+Sans:wght@200&display=swap');body {
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; 
+    background-color: #000!important;
+    /* 
+    display: flex;*/
+}
+.Head {
+  
+  color: hsl(0, 23%, 97%);
+  font-size: 2rem!important;
+  font-weight: bold!important;
+  font-family: monospace;
+  letter-spacing: 7px!important;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.Head {
+  padding: 64px;
+  background: linear-gradient(to right, hsl(0, 0%, 30%) 0, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 30%) 20%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 2s infinite linear;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position: 1000px;
+  }
+}
+.youare{
+  
+  font-family: 'Kanit', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 2rem;
+}
+h1,h2,h3,h4,h5,p,button,label{
+  margin: 0;
+  color: white;
+}
+h1{
+font-family: 'Kanit', sans-serif;
+font-family: 'Lato', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Noto Sans', sans-serif;
+font-size: 1.2rem;
+}

@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import SigninButton from "@/components/SigninButton";
 import "../../css/login.css"
+import ParticleBackground from "@/components/ParticleBackground";
 export default function SignupPage() {
     const router = useRouter();
     const [user , setUser] = useState({
@@ -30,7 +31,7 @@ export default function SignupPage() {
 
     return (
       <div id="container" className="container sign-up">
-        <SigninButton type="signup" />
+        
             <h1>{loading ? "Processing" : "Signup"}</h1>
             
             
@@ -75,6 +76,7 @@ export default function SignupPage() {
                   />
                 </div>
                 <button onClick={onSignup}>Signup here</button>
+                <SigninButton type="signup" />
                 <p>
                   <span>Already have an account?</span>
                   <Link href="/login">Visit Login Page</Link>

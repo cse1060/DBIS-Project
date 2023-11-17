@@ -1,32 +1,8 @@
-"use client";
-
 import { TypeAnimation } from 'react-type-animation';
 import CountUp from 'react-countup';
-import React, { useEffect, useState } from 'react'
-import axios from 'axios';
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import "@/css/loading.css"
-
+import React, { useEffect, useState } from 'react'
 export default function Loading() {
-
-    const router = useRouter()
-
-
-    const [data, setData]: any = useState("nothing")
-
-    useEffect(() => {
-        getUserDetails();
-    }, [])
-    async function getUserDetails() {
-        const res = await axios.get('/api/users/current_user')
-        console.log(res.data.data.username);
-        setData(res.data.data.username);
-    }
-    useEffect(() => {
-        router.push(`/profile/${data}`);
-    }, [data])
-
     return (
         <div className='bg-black'>
             <div className="loader-wrapper ">

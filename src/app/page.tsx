@@ -8,14 +8,16 @@ import ChatBot from "@/components/ChatBot"
 import "../css/home.css"
 import Link from "next/link"
 import Home from "@/components/Home"
+import Upload_Widget from "@/helpers/Upload_Widget";
+import Navbar from "@/components/Navbar";
 
 export default function App() {
     return (
         <>
-
+            <Navbar />
             {/* <Sidebar />
             <NewsCard /> */}
-
+            <Upload_Widget />
             <ChatBot />
 
 

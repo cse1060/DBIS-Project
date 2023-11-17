@@ -1,0 +1,162 @@
+body {
+  padding: 0;
+}
+
+.property-details-container {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10%;
+  border: 1px solid;
+  padding-right: 10%;
+}
+
+.property-details-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+section {
+  padding: 1rem;
+}
+
+.amount {
+  font-size: 2em;
+  margin-right: 10px;
+}
+
+.rupee-symbol {
+  font-size: 1em;
+  margin-right: 5px;
+}
+
+.area {
+  font-size: 1em;
+  margin-right: 10px;
+}
+
+.address {
+  font-size: 1em;
+}
+
+section {
+  margin-top: 20px;
+}
+
+h2 {
+  font-size: 1.5em;
+  font-weight: bolder;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+.Head {
+  color: hsl(0, 23%, 97%);
+  font-size: 2rem !important;
+  font-weight: bold !important;
+  font-family: monospace;
+  letter-spacing: 7px !important;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.Head {
+  padding: 64px;
+  background: linear-gradient(to right, hsl(0, 1%, 49%) 0, hsl(0, 0%, 100%) 10%, hsl(0, 5%, 16%) 20%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 2s infinite linear;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0;
+  }
+
+  100% {
+    background-position: 1000px;
+  }
+}
+
+.box {
+  --border-size: 3px;
+  --border-angle: 0turn;
+  background-image: conic-gradient(from var(--border-angle),
+      rgb(136, 91, 178),
+      rgb(66, 106, 125) 50%,
+      rgb(136, 91, 178)),
+    conic-gradient(from var(--border-angle), transparent 20%, #08f, #f03);
+  background-size: calc(100% - (var(--border-size) * 2)) calc(100% - (var(--border-size) * 2)),
+    cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  animation: bg-spin 3s linear infinite;
+
+  @keyframes bg-spin {
+    to {
+      --border-angle: 2turn;
+    }
+  }
+
+  // &:hover {
+  //   animation-play-state: paused;
+  // }
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
+}
+
+.propertyType {
+  margin-left: 1rem;
+  padding-left: 1rem;
+  border-left: 1px solid black;
+}
+
+.property_ {
+  display: flex;
+}
+
+.propertyimg {
+  height: 15vh;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 20px;
+}
+
+.grid-item {
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
+}
+
+.alt {
+  // background-color: rgb(175, 202, 202);
+}
+
+.chatting {
+  background-color: aliceblue;
+}
+
+.flex-comment {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
