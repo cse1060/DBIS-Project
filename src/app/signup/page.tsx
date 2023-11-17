@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import SigninButton from "@/components/SigninButton";
 import "../../css/login.css"
+import ParticleBackground from "@/components/ParticleBackground";
 export default function SignupPage() {
     const router = useRouter();
     const [user , setUser] = useState({

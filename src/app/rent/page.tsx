@@ -1,6 +1,6 @@
 import React from 'react'
 import BaseLayout from '../../components/baselayout'
-
+import ParticleBackground from '@/components/ParticleBackground'
 export default function RentPage() {
   return (
     <div>

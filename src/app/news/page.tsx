@@ -3,7 +3,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from "framer-motion"
-
+import ParticleBackground from '@/components/ParticleBackground';
 
 export default function News() {
 

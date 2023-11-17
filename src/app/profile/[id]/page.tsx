@@ -9,7 +9,7 @@
 // import 'swiper/css/pagination';
 // import 'swiper/css/scrollbar';
 // import 'swiper/css/effect-fade';
-// import "@/css/profile.css"  
+// import "@/css/profile.css"
 
 // export default function UserProfile({ params }: any) {
 
@@ -30,7 +30,7 @@
 //         loop = {true}
 //         onSwiper={(swiper) => console.log(swiper)}
 //         onSlideChange={() => console.log('slide change')}
-        
+
 //         // autoplay={{
 //         //   delay: 2500,
 //         //   disableOnInteraction: false,
@@ -56,9 +56,9 @@
 //     </div>
 //   )
 "use client";
-import axios from 'axios';
-import React, { useEffect, useState } from 'react'
-
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import "../../../css/profile.css";
 
 export default function UserProfile({ params }: any) {
   var data: any;
@@ -66,37 +66,57 @@ export default function UserProfile({ params }: any) {
   const [loading, setLoading] = useState(true);
   const [userName, setUserName] = useState("");
 
-
   async function getProfile() {
     const res = await axios.post("/api/profile/getInfo", { id: userName });
-    data = res.data
+    data = res.data;
     console.log(data, "**");
     console.log(res.data);
     setLoading(false);
   }
 
-
   useEffect(() => {
     setUserName(params.id);
-  }, [])
+  }, []);
 
   useEffect(() => {
     setLoading(false);
-  }, [userName])
+  }, [userName]);
   if (loading) {
-    return (
-      <h1>Loading</h1>
-    )
+    return <h1>Loading</h1>;
   } else {
-
     getProfile();
 
     return (
-      <div>
-        <h1>Profile</h1>
-        <hr />
-        <p>Profile Page <span className='p-2 rounded bg-blue-500 text-lg'>{params.id}</span></p>
-      </div>
-    )
+      <>
+        <div className="topspace"></div>
+            <h1>User Dashboard</h1>
+          <div className="dashboard-container">
+            <div className="user-info">
+              <p>
+                <strong>ID:</strong> {params.id}
+              </p>
+              <p>
+                <strong>Email:</strong> {params.email}
+              </p>
+              <p>
+                <strong>Username:</strong> {params.username}
+              </p>
+              <p>
+                <strong>Password:</strong> {params.password}
+              </p>
+              <p>
+                <strong>Phone Number:</strong> {params.phoneno}
+              </p>
+              <p>
+                <strong>Full Name:</strong> {params.fullname}
+              </p>
+              <p>
+                <strong>Property:</strong> {params.property}
+              </p>
+            </div>
+          <div className="profileimg"><p>Profile Img</p></div>
+          </div>
+      </>
+    );
   }
 }

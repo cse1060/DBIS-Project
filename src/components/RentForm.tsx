@@ -13,7 +13,7 @@ export default function RentForm() {
         }
     }
     const [rent, setRent] = useState({ action: "rent", type: "", subType: "", city: "" })
-
+    
     return (
         <div>
             <input type="radio" id="type" name="type" value="residential" onClick={() => { setRent({ ...rent, type: "residential" }) }} />
@@ -24,17 +24,24 @@ export default function RentForm() {
 
             {rent.type === "residential" && (
                 <div>
-                    <h1 onClick={() => { setRent({ ...rent, subType: "apartment" }) }}>Apartment</h1>
-                    <h1 onClick={() => { setRent({ ...rent, subType: "bungalow" }) }}>Bungalow</h1>
-                    <h1 onClick={() => { setRent({ ...rent, subType: "villa" }) }}>Villa</h1>
-                    <h1 onClick={() => { setRent({ ...rent, subType: "duplex" }) }}>Duplex</h1>
+                    <input type="radio" id="type2" name="type2" value="apartment" onClick={() => { setRent({ ...rent, subType: "apartment" }); }}/>
+                    <label htmlFor="apartment">Apartment</label><br />
+                    <input type="radio" id="type2" name="type2" value="bunglow" onClick={() => { setRent({ ...rent, subType: "bunglow" }) }}/>
+                    <label htmlFor="bunglow">Bunglow</label><br />
+                    <input type="radio" id="type2" name="type2" value="villa" onClick={() => { setRent({ ...rent, subType: "villa" }) }}/>
+                    <label htmlFor="villa">Villa</label><br />
+                    <input type="radio" id="type2" name="type2" value="duplex" onClick={() => { setRent({ ...rent, subType: "duplex" }) }}/>
+                    <label htmlFor="duplex">Duplex</label><br />
                 </div>
             )}
             {rent.type === "commercial" && (
                 <div>
-                    <h1 onClick={() => { setRent({ ...rent, subType: "garage" }) }}>Garage</h1>
-                    <h1 onClick={() => { setRent({ ...rent, subType: "shop" }) }}>Shop</h1>
-                    <h1 onClick={() => { setRent({ ...rent, subType: "mall" }) }}>Mall</h1>
+                    <input type="radio" id="type2" name="type2" value="garage" onClick={() => { setRent({ ...rent, subType: "garage" }) }}/>
+                    <label htmlFor="garage">Garage</label><br />
+                    <input type="radio" id="type2" name="type2" value="shop" onClick={() => { setRent({ ...rent, subType: "shop" }) }}/>
+                    <label htmlFor="shop">Shop</label><br />
+                    <input type="radio" id="type2" name="type2" value="mall" onClick={() => { setRent({ ...rent, subType: "mall" }) }}/>
+                    <label htmlFor="mall">Mall</label><br />
                 </div>
             )}
             <label htmlFor="city">City</label>
