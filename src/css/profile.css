@@ -1,13 +1,87 @@
-.swiper-wrapper{
+.swiper-wrapper {
     padding-top: 20vh;
     display: flex;
     justify-content: center;
     justify-items: center;
 }
-*{margin: 0;}
-.slide{
+
+* {
+    margin: 0;
+}
+
+.slide {
     overflow: visible;
 }
-.swiper{
+
+.swiper {
     height: 85vh;
+}
+
+.topspace {
+    margin: 10%;
+}
+
+/* UserDashboard.css */
+.dashboard-container {
+    max-width: 1000px;
+    background-color: rgb(255, 255, 255);
+    margin: 0 auto;
+    padding: 20px;
+    border: 3px solid #484747;
+    border-radius: 40px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+.user-info {
+    margin-top: 20px;
+}
+
+.user-info p {
+    margin-bottom: 8px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+
+
+body {
+    background: linear-gradient(-45deg, #bbbaba, #6d6464);
+    background-size: 400% 400%;
+    animation: gradient 2s ease infinite;
+    height: 100vh;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.dashboard-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.profileimg {
+    width: 40%;
+    border: 1px solid black;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+p {
+    font-size: 1.25rem;
 }

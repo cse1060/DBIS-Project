@@ -2,23 +2,23 @@
 import React from 'react'
 import '../css/newscard.css'
 
-export default function NewsCard (){
-    var winwidth=window.innerWidth
-    return(
+export default function NewsCard(props: any) {
+    var winwidth = window.innerWidth
+    return (
         <>
-        {/* <a href="#"> */}
+            {/* <a href="#"> */}
             <div className="card" >
-            
-                    <img src="https://www.wbcsd.org/var/site/storage/images/overview/news-insights/wbcsd-insights/accelerating-business-along-the-road-to-a-nature-positive-future/225091-1-eng-GB/Accelerating-business-along-the-road-to-a-nature-positive-future_i1140.jpg" alt="image" />
-                
-              
-                    <a className='news_read' href="#"><h2>Read More</h2></a>
-               
-                <div className="content">
-                    <h2>This is the title</h2>
-                    <p>This is little description of the prdoct Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita doloremque perspiciatis facere voluptates dolorum aliquid hic, laudantium sequi quas nihil nesciunt commodi?......</p>
+
+                <img src={props.img} />
+
+                <a className='news_read' href="#"><h2>Read More</h2></a>
+
+                <div className="content bg-zinc-800 " >
+                    <h2 className='text-white'>{props.title}</h2>
+                    <p className='text-sm text-zinc-200 text-center'>{props.content}</p>
+                    <p className='text-xs text-zinc-400 text-center'>Author : {props.author} | Published At : {props.date} | Source : {props.source.name}</p>
                 </div>
-                
+
             </div>
             {/* </a> */}
         </>

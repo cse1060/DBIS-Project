@@ -24,6 +24,7 @@
     "dotenv": "^16.3.1",
     "eslint": "8.49.0",
     "eslint-config-next": "13.4.19",
+    "flickity": "^3.0.0",
     "framer-motion": "^10.16.4",
     "js-cookie": "^3.0.5",
     "jsonwebtoken": "^9.0.2",
@@ -41,8 +42,10 @@
     "react-icon": "^1.0.0",
     "react-icons": "^4.11.0",
     "react-leaflet": "^4.2.1",
+    "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.18.0",
-    "swiper": "^8.0.0",
+    "react-slick": "^0.29.0",
+    "swiper": "^9.4.1",
     "tailwindcss": "3.3.3"
   },
   "devDependencies": {

@@ -1,0 +1,11 @@
+.news_cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    transition: 500ms ease-in-out;
+}
+
+.news_active {
+    opacity: 0.5;
+}
