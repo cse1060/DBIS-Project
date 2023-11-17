@@ -1,0 +1,77 @@
+html {
+    background-color: black;
+}
+
+form {
+    position: absolute;
+    height: 56vh;
+    width: 30vw;
+    top: 22vh;
+    left: 35vw;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px black solid;
+    border-radius: 10px;
+}
+
+center>h1 {
+    background-color: black;
+    margin-top: 50px;
+    color: white;
+}
+
+form {
+    background-color: white;
+}
+
+form>label {
+    display: block;
+}
+
+form input {
+    width: 300px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+form textarea {
+    width: 300px;
+    height: 200px;
+    border: 1px solid black;
+    resize: none;
+    border-radius: 10px;
+}
+
+
+.box {
+  --border-size: 3px;
+  --border-angle: 0turn;
+  background-image: conic-gradient(from var(--border-angle),
+      rgb(136, 91, 178),
+      rgb(66, 106, 125) 50%,
+      rgb(136, 91, 178)),
+    conic-gradient(from var(--border-angle), transparent 20%, #08f, #f03);
+  background-size: calc(100% - (var(--border-size) * 2)) calc(100% - (var(--border-size) * 2)),
+    cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  animation: bg-spin 3s linear infinite;
+
+  @keyframes bg-spin {
+    to {
+      --border-angle: 2turn;
+    }
+  }
+
+  // &:hover {
+  //   animation-play-state: paused;
+  // }
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
+}

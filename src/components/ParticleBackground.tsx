@@ -7,7 +7,7 @@ const ParticleBackground = () => {
   const options = {
     particles: {
       number: {
-        value: 50,
+        value: 80,
         density: {
           enable: true,
           area: 800,
@@ -17,7 +17,7 @@ const ParticleBackground = () => {
         value: ["", "", "", ""],
       },
       shape: {
-        type: "triangle",
+        type: "circle",
       },
       opacity: {
         value: 0.75,

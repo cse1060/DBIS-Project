@@ -1,25 +1,25 @@
 // import PropertyCard from "@/components/property_card"
-"use client"
-import Sidebar from "@/components/SideBar"
+"use client";
+import Sidebar from "@/components/SideBar";
 import NewsCard from "@/components/NewsCard";
-import ChatBot from "@/components/ChatBot"
+import ChatBot from "@/components/ChatBot";
 // import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // import "../css/home.css"
+import "../css/home.css";
+import Link from "next/link";
+import Home from "@/components/Home";
 import "../css/home.css"
-import Link from "next/link"
-import Home from "@/components/Home"
-
 export default function App() {
-    return (
-        <>
+  return (
+    <>
+      <Home />
 
-            {/* <Sidebar />
+      {/* <Sidebar />
             <NewsCard /> */}
 
-            <ChatBot />
+      <ChatBot />
 
-
-            {/* <Link href="/postproperty">Post Property</Link>
+      {/* <Link href="/postproperty">Post Property</Link>
             <div className="mainimg">
             </div>
             <div className="buttons">
@@ -43,6 +43,6 @@ export default function App() {
                 </div>
 
             </div> */}
-        </>
-    )
+    </>
+  );
 }

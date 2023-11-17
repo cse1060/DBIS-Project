@@ -32,46 +32,61 @@ export default function Navbar() {
     // </div>
     <>
       <center className="above">
-        
         <nav id="main-nav" className="navigationWrapper">
           <div className="navbar">
             <ul>
               <li>
                 <center>
-                  <a href="#">
+                  <a href="/">
                     <img src="/images/logo.jpg" className="logoimg" />
                     Home
                   </a>
-                  <button onClick={logout}>Logout</button>
                 </center>
               </li>
               <li>
-                <a href="#">
+                <a href="">
                   Property Options
                   <span className="arrow">&#x25BC;</span>
                 </a>
                 <div>
                   <ul className="submenu">
                     <li>
-                      <a href="#">Buy</a>
+                      <a href="/postproperty">Post Property</a>
                     </li>
                     <li>
-                      <a href="#">Rent</a>
+                      <a href="/postproperty/add_property">Add Property</a>
                     </li>
                     <li>
-                      <a href="#">
-                        Sell
+                      <a href="/rent">
+                        Rent
                         <span className="arrow">&#x25B6;</span>
                       </a>
                       <ul className="submenu-2">
                         <li>
-                          <a href="#">Bunglow</a>
+                          <a href="/rent">Bunglow</a>
                         </li>
                         <li>
-                          <a href="#">Flat</a>
+                          <a href="/rent">Flat</a>
                         </li>
                         <li>
-                          <a href="#">Plot</a>
+                          <a href="/rent">Plot</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/sale">
+                        Sale
+                        <span className="arrow">&#x25B6;</span>
+                      </a>
+                      <ul className="submenu-2">
+                        <li>
+                          <a href="/sale">Bunglow</a>
+                        </li>
+                        <li>
+                          <a href="/sale">Flat</a>
+                        </li>
+                        <li>
+                          <a href="/sale">Plot</a>
                         </li>
                       </ul>
                     </li>
@@ -80,27 +95,33 @@ export default function Navbar() {
               </li>
               <li>
                 <a href="#">
-                  Services
+                  Blogs
                   <span className="arrow">&#x25BC;</span>
                 </a>
                 <ul className="submenu">
                   <li>
-                    <a href="#">India</a>
+                    <a href="/blogs/all">All Blogs</a>
                   </li>
                   <li>
-                    <a href="#">Abroad</a>
+                    <a href="/blogs/create_blog">Create Blog</a>
                   </li>
                 </ul>
               </li>
               <li>
-                <a href="#">ContactUs</a>
+                <a href="/contactus">ContactUs</a>
               </li>
               <li>
-                <a href="#">About</a>
+                <a href="/chat">Chat</a>
+              </li>
+              <li>
+                <a href="/profile/1">Profile</a>
+              </li>
+              <li>
+                <a href="/news">NEWS</a>
               </li>
               <li>
                 <a href="#">
-                  <button onClick={logout}>Logout</button>
+                  <button onClick={logout}>Logout/Login</button>
                 </a>
               </li>
             </ul>

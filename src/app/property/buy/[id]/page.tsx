@@ -5,6 +5,7 @@ import React,{useState} from "react";
 import Comment from "../../../../components/Review";
 import Review from "../../../../components/ReviewSection";
 import { FaStar } from "react-icons/fa";
+import { Carousel } from 'react-bootstrap';
 const PropertyDetails = (props: any) => {
   const {
     amount = 1234,
@@ -90,7 +91,7 @@ const PropertyDetails = (props: any) => {
             <div>
               <img src="user"></img>
             </div>
-              <p>Name:</p>
+            <p>Name:</p>
             <p>{ownerDetails}</p>
           </div>
           <button className="chatting">Chat with The Owner</button>
@@ -111,21 +112,26 @@ const PropertyDetails = (props: any) => {
           <h2>
             <u>Reviews</u>
           </h2>
-          <ul>00
-              <div className="review-section">
-                <h2>Customer Reviews</h2>
-                <div className="star-rating">
-                  {[1, 2, 3, 4, 5].map((star) => (
-                    <FaStar
-                      key={star}
-                      className={star <= 3 ? "star-filled" : "star-empty"}
-                      onClick={() => handleRatingChange(star)}
-                    />
-                  ))}
-                </div>
-                <p>Overall Customer Rating:<br/><strong>{3.3} stars</strong></p>
+          <ul>
+            00
+            <div className="review-section">
+              <h2>Customer Reviews</h2>
+              <div className="star-rating">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <FaStar
+                    key={star}
+                    className={star <= 3 ? "star-filled" : "star-empty"}
+                    onClick={() => handleRatingChange(star)}
+                  />
+                ))}
               </div>
-              <Review />
+              <p>
+                Overall Customer Rating:
+                <br />
+                <strong>{3.3} stars</strong>
+              </p>
+            </div>
+            <Review />
             {reviews.map((review, index) => (
               <li key={index}>{review}</li>
             ))}

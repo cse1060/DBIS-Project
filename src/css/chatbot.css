@@ -51,6 +51,16 @@
     position: fixed;
     bottom: 5%;
     right: 5%;
-    padding: 30px;
-    background-color: blueviolet;
+    padding: 10px;
+    border: white 2px solid;
+    border-radius: 30px;
+    color: white;
+    transition: 0.2s;
+}
+
+.chatbot_btn:hover {
+    scale: 1.1;
+    transition: 0.2s;
+    background-color: white;
+    color: black;
 }
