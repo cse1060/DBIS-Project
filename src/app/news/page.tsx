@@ -11,7 +11,7 @@ export default function News() {
     const [news, setNews] = useState([] as any)
 
     async function getNews() {
-        const { data } = await axios.get(`https://newsapi.org/v2/everything?q=estate&from=2023-10-02&apiKey=c7dbc68b257f44c48106a62cdc9b43ba`);
+        const { data } = await axios.get(`https://newsapi.org/v2/everything?q=estate&apiKey=c7dbc68b257f44c48106a62cdc9b43ba`);
         setNews(data.articles);
         console.log(news)
         console.log(data.articles)
@@ -31,13 +31,13 @@ export default function News() {
         console.log(query);
 
         setLoading(true);
-        const { data } = await axios.get(`https://newsapi.org/v2/everything?q=${query}&from=2023-10-02&apiKey=c7dbc68b257f44c48106a62cdc9b43ba`);
+        const { data } = await axios.get(`https://newsapi.org/v2/everything?q=${query}&apiKey=c7dbc68b257f44c48106a62cdc9b43ba`);
         setNews(data.articles);
         setLoading(false);
     }
     async function searchCountry() {
         setLoading(true);
-        const { data } = await axios.get(`https://newsapi.org/v2/top-headlines?country=${country}&category=business&from=2023-10-02&apiKey=c7dbc68b257f44c48106a62cdc9b43ba`);
+        const { data } = await axios.get(`https://newsapi.org/v2/top-headlines?country=${country}&category=business&apiKey=c7dbc68b257f44c48106a62cdc9b43ba`);
         setNews(data.articles);
         setLoading(false);
     }

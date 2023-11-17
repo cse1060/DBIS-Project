@@ -31,6 +31,7 @@
 //         onSwiper={(swiper) => console.log(swiper)}
 //         onSlideChange={() => console.log('slide change')}
 
+
 //         // autoplay={{
 //         //   delay: 2500,
 //         //   disableOnInteraction: false,
@@ -64,7 +65,7 @@ export default function UserProfile({ params }: any) {
   var data: any;
 
   const [loading, setLoading] = useState(true);
-  const [userName, setUserName] = useState("");
+  const [userName, setUserName] = useState(params.id);
 
   async function getProfile() {
     const res = await axios.post("/api/profile/getInfo", { id: userName });

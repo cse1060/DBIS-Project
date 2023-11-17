@@ -39,9 +39,10 @@ export default function Navbar() {
               <li>
                 <center>
                   <a href="#">
-                    <img src="./images/logo.jpg" className="logoimg" />
+                    <img src="/images/logo.jpg" className="logoimg" />
                     Home
                   </a>
+                  <button onClick={logout}>Logout</button>
                 </center>
               </li>
               <li>

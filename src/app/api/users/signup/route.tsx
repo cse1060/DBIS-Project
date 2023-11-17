@@ -39,6 +39,8 @@ export async function POST(request: NextRequest) {
             }
         })
 
+
+
         console.log(newUser);
         //send email
         await sendEmail({ email, emailType: "VERIFY", userId: user ? user.id : newUser.id })

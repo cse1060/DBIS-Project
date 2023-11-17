@@ -27,11 +27,36 @@ model User {
   User_Profile              User_Profile[]
   Agreement                 Agreement[]
   Property                  Property[]
+  Blog                      Blog[]
 }
+
+model Blog {
+  blog_id   Int      @id @unique @default(autoincrement())
+  user_id   Int
+  user_name String?
+  user_img  String?
+  title     String
+  body      String
+  date      DateTime @default(now())
+  likes     Int      @default(0)
+  dislikes  Int      @default(0)
+  imgurl    String?
+  user      User     @relation(fields: [user_id], references: [id])
+}
+
+// model BlogUpvote {
+//   blog_id Int
+//   user_id Int
+//   like    Boolean @default(false)
+//   dislike Boolean @default(false)
+
+//   @@id([blog_id, user_id])
+//   @@unique([blog_id, user_id])
+// }
 
 model Property {
   id                      Int      @id @unique @default(autoincrement())
-  agent_id                Int
+  agent_id                Int?
   agreement_id            Int?
   date_added              DateTime
   city                    String
@@ -54,7 +79,7 @@ model Property {
   Commercial_Property  Commercial_Property?  @relation(fields: [Commercial_Property_id], references: [id])
   Residential_Property Residential_Property? @relation(fields: [Residential_Property_id], references: [id])
   Images               Images[]
-  User_Profile         User_Profile          @relation(fields: [agent_id, id], references: [user_id, prop_id])
+  User_Profile         User_Profile?         @relation(fields: [agent_id, id], references: [user_id, prop_id])
 }
 
 model Images {

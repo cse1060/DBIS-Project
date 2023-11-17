@@ -2,20 +2,21 @@
 "use client"
 import Sidebar from "@/components/SideBar"
 import NewsCard from "@/components/NewsCard";
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import ChatBot from "@/components/ChatBot"
+// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // import "../css/home.css"
 import "../css/home.css"
 import Link from "next/link"
+import Home from "@/components/Home"
 
-
-export default function Home() {
-
+export default function App() {
     return (
         <>
 
-            <Sidebar />
+            {/* <Sidebar />
+            <NewsCard /> */}
 
-            <NewsCard/>
+            <ChatBot />
 
 
             {/* <Link href="/postproperty">Post Property</Link>
